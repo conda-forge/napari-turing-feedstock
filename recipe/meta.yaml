@@ -1,5 +1,5 @@
 {% set name = "napari-turing" %}
-{% set version = "0.1.0" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari-turing-{{ version }}.tar.gz
-  sha256: e2d0f81aa8fcd45c6ff062112d190cfa5221943e361449068b022b416ab79995
+  sha256: d92041b9608a807044fe81d6b91dd35d339787f0818fb192da195266877e34fb
 
 build:
   noarch: python
