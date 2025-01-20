@@ -6,23 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari-turing-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/napari-turing-{{ version }}.tar.gz
   sha256: d34413ca2fa27b7c4419f3fb7e1b9ba1f077d421ba7d744a1943caa41a3e20e8
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
   run:
     - magicgui
     - napari
     - numpy
-    - python >=3.8
+    - python >={{ python_min }}
     - qtpy
     - scikit-image
     - scipy
@@ -35,6 +35,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/leoguignard/napari-turing
